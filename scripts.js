@@ -2,9 +2,11 @@ const list = document.querySelector('ul');
 const input = document.querySelector('input');
 const button = document.querySelector('button');
 
+button.addEventListener('click', onButtonClick);
+
 function onButtonClick() {
-    let item = input.textContent;
-    input.textContent = "";
+    let item = input.value;
+    input.value = "";
 
     let listItem = document.createElement('li');
     let itemText = document.createElement('span');
@@ -21,4 +23,6 @@ function onButtonClick() {
     itemDelete.addEventListener('click', () => {
         list.removeChild(listItem);
     });
+
+    input.focus();
 }
